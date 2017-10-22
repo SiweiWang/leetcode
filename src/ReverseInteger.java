@@ -1,7 +1,7 @@
 /**
  * Created by siweiwang on 2017-10-21.
  */
-public class reverseInteger {
+public class ReverseInteger {
     public int reverse(int x) {
         long reverseInt = 0;
 
