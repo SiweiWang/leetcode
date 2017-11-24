@@ -7,6 +7,8 @@ public class ConstructRectangle {
         while ( area % r != 0){
             r --;
         }
+        String s = "abc";
+        System.out.println(s.substring(1,2));
         return new int[] {area/r, r};
     }
 }
