@@ -1,10 +1,16 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
+        s = s.lower()
         stringlen = len(s)
         if stringlen == 0 or stringlen ==1:
             return s
         if stringlen == 2:
             return s if s[0] == s[1] else s[0]
+
+        # from codewar for test case 'a' * 10000
+        unique_chart = list(set(s))
+        if len(unique_chart) == 1:
+            return s
 
         max_size = 0
         substring = ""
@@ -65,6 +71,6 @@ def main():
     print(sol.longestPalindrome(""))
     print(sol.longestPalindrome("flsuqzhtcahnyickkgtfnlyzwjuiwqiexthpzvcweqzeqpmqwkydhsfipcdrsjkefehhesubkirhalgnevjugfohwnlhbjfewiunlgmomxkafuuokesvfmcnvseixkkzekuinmcbmttzgsqeqbrtlwyqgiquyylaswlgfflrezaxtjobltcnpjsaslyviviosxorjsfncqirsjpkgajkfpoxxmvsyynbbovieoothpjgncfwcvpkvjcmrcuoronrfjcppbisqbzkgpnycqljpjlgeciaqrnqyxzedzkqpqsszovkgtcgxqgkflpmrikksaupukdvkzbltvefitdegnlmzeirotrfeaueqpzppnsjpspgomyezrlxsqlfcjrkglyvzvqakhtvfmeootbtbwfhqucbnuwznigoyatvkocqmbtqghybwrhmyvvuchjpvjckiryvjfxabezchynfxnpqaeampvaapgmvoylyutymdhvhqfmrlmzkhuhupizqiujpwzarnszrexpvgdmtoxvjygjpmiadzdcxtggwamkbwrkeplesupagievwsaaletcuxtpsxmbmeztcylsjxvhzrqizdmgjfyftpzpgxateopwvynljzffszkzzqgofdlwyknqfruhdkvmvrrjpijcjomnrjjubfccaypkpfokohvkqndptciqqiscvmpozlyyrwobeuazsawtimnawquogrohcrnmexiwvjxgwhmtpykqlcfacuadyhaotmmxevqwarppknoxthsmrrknu"))
     print(sol.longestPalindrome("abcda"))
-
+    print(sol.longestPalindrome('a'*10000))
 if __name__ == "__main__":
     main()
